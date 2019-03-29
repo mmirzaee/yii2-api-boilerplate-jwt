@@ -7,4 +7,5 @@ return [
     'JwtIssuer' => 'ChangeThisToIssuer',
     'JwtAudience' => 'ChangeThisToAudience',
     'JwtExpire' => 3600,
+    'DefaultSignupRole' => 'member',
 ];
