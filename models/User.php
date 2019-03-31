@@ -20,7 +20,6 @@ use Yii;
  * @property int $created_at
  * @property int $updated_at
  */
-
 class User extends UserIdentity
 {
     // the list of status values that can be stored in user table
@@ -76,7 +75,7 @@ class User extends UserIdentity
      */
     public function getRole()
     {
-        return $this->hasOne(Role::className(), ['user_id' => 'id']);
+        return $this->hasOne(Role::class, ['user_id' => 'id']);
     }
 
 //------------------------------------------------------------------------------------------------//

@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\User;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
 use sizeg\jwt\JwtHttpBearerAuth;
+use yii\filters\Cors;
 use yii\rest\Controller;
 
 class AuthController extends Controller
@@ -17,11 +18,11 @@ class AuthController extends Controller
 
         // add CORS filter
         $behaviors['corsFilter'] = [
-            'class' => \yii\filters\Cors::className(),
+            'class' => Cors::class,
         ];
 
         $behaviors['authenticator'] = [
-            'class' => JwtHttpBearerAuth::className(),
+            'class' => JwtHttpBearerAuth::class,
         ];
 
         $behaviors['authenticator']['except'] = ['login', 'signup'];
