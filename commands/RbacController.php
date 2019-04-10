@@ -3,8 +3,10 @@
 namespace app\commands;
 
 use app\models\User;
+use app\rbac\rules\AuthorRule;
 use Yii;
 use yii\console\Controller;
+use yii\helpers\Console;
 
 class RbacController extends Controller
 {
@@ -18,7 +20,7 @@ class RbacController extends Controller
         //---------- RULES ----------//
 
         // add the rule
-        $rule = new AuthorRule;
+        $rule = new AuthorRule();
         $auth->add($rule);
 
         //---------- PERMISSIONS ----------//
