@@ -25,7 +25,7 @@ class AuthController extends Controller
             'class' => JwtHttpBearerAuth::class,
         ];
 
-        $behaviors['authenticator']['except'] = ['login', 'signup'];
+        $behaviors['authenticator']['except'] = ['login', 'signup', 'options'];
 
         return $behaviors;
     }
@@ -148,6 +148,11 @@ class AuthController extends Controller
             'updated_at' => $user->updated_at,
             'role' => $user->getRoleName(),
         ];
+    }
+
+    public function actionOptions($x1 = '', $x2 = '', $x3 = '', $x4 = '')
+    {
+        return ['msg' => 'ok'];
     }
 
 
